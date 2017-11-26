@@ -4,4 +4,4 @@ my workarea for interview preperation on following technologies
 - cpp programming
 - linux system programming
 - networking
-
+- python
