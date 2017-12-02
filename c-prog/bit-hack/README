@@ -1,0 +1,91 @@
+Set a bit
+---------
+bit_fld |= (1 << n)
+
+int setBit(int x, unsigned char position)
+{
+	int mask = 1 << position;
+	return x | mask;
+
+    //return (x | (1 << (position - 1)));
+}
+
+Clear a bit
+-----------
+bit_fld &= ~(1 << n)
+
+int clearBit(int x, unsigned char position)
+{
+   int mask = 1 << position;
+   return x & ~mask;
+
+   //return (x & ~(1 << (position - 1)));
+}
+
+Toggle a bit
+------------
+bit_fld ^= (1 << n)
+
+int flipBit(int x, unsigned char position)
+{
+   int mask = 1 << position;
+   return x ^ mask;
+}
+
+Test a bit
+-----------
+bit_fld & (1 << n)
+
+bool isBitSet(int x, unsigned char position)
+{
+   x >>= position;
+   return (x & 1) != 0;
+}
+
+Modify a bit
+------------
+int modifyBit(int x, unsigned char position, bool newState)
+{
+   int mask = 1 << position;
+   int state = int(newState); // relies on true = 1 and false = 0
+   return (x & ~mask) | (-state & mask);
+}
+
+To Compute Sign
+---------------
+/* MOVE Most Significant Bit to Least Significant Bit
+   For Negative no Most Significant Bit would be 1
+   For Positive no Most Significant Bit would be 0 
+   */	
+
+unsigned int isNegative(int n)
+{
+	return -( n	>> ((sizeof(int) * CHAR_BIT) - 1));
+}
+
+Modulus division by a number (which is in power of 2)
+----------------------------
+/* This function will return n % d.
+   d must be one of: 1, 2, 4, 8, 16, 32, … 
+   d-1 will be all ones in Lower Bytes */
+
+unsigned int getModulo(unsigned int n, unsigned int d)
+{
+     return ( n & (d-1) );
+} 
+
+Multiplication Formulas
+-----------------------
+For Multiplying any no with 10
+	no = (no << 3) + (no << 1);	
+
+
+Code to Swap two Numbers
+------------------------
+void swap(int *x, int *y)
+
+{
+	*x = *x ^ *y;
+	*y = *x ^ *y;
+	*x = *x ^ *y;
+}
