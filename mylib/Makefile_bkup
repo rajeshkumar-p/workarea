@@ -1,0 +1,21 @@
+CC=cc	# compiler
+
+#CFLAGS=-c -Wall
+CFLAGS=-c
+
+all: mylib
+
+mylib: myprint.o errfunc.o tmp.o
+		#$(CC) myprint.o errfunc.o
+		$(CC) myprint.o errfunc.o tmp.o -o mylib
+
+myprint.o: myprint.c
+		$(CC) $(CFLAGS) myprint.c		
+
+errfunc.o: errfunc.c
+		$(CC) $(CFLAGS) errfunc.c 		
+
+tmp.o: tmp.c
+		$(CC) $(CFLAGS) tmp.c 		
+clean:
+	rm -rf *.o mylib	

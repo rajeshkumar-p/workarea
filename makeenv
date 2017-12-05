@@ -1,0 +1,14 @@
+export SOFTWARE_ROOT=$PWD
+export LD_LIBRARY_PATH=$PWD/mylib/
+export BASE_DIR=$PWD
+
+alias inter='cd $BASE_DIR'
+alias cls='clear'
+alias ds='cd $BASE_DIR/data_structures/' 
+alias lib='cd $BASE_DIR/mylib/'
+alias ker='cd $BASE_DIR/kernel/' 
+alias cprog='cd $BASE_DIR/c-prog/'
+alias cpp='cd $BASE_DIR/cpp-prog/'
+alias sysprog='cd $BASE_DIR/system_programming'
+alias socprog='cd $BASE_DIR/socket_prog'
+

@@ -1,0 +1,2 @@
+cc -E file.c >> tmp.c - to check preprocessor output
+cc -C file.c >> tmp.0 - to compile without linking - output object file
