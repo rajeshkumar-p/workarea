@@ -1,0 +1,56 @@
+README
+
+declaration 
+- struct is a keyword ,
+- Struct_type is a name (tag) that identifies structures of this composition 
+- member_type1 member_name1, member_type2, memeber_name2... are individual member declaration.
+
+struct key facts
+- The individual members can be ordinary variables ,pointers, arrays, or other structures. 
+- The member names within a particular structure must be distinct from one another ,though a member name can be
+the same as the name of a variable defined outside the structure.
+- A storage class cannot be assigned to an individual member, 
+- and individual members cannot be initialized within a structure type declaration .
+- unlike the declaration of a variable of array ,defining a structure causes no storage to be reserved.
+
+
+By defining a structure ,the programmers derives a new data type composed of a collection of already
+known data types and their names. For example ,suppose that the information about 10,000 business
+accounts has to be maintained .The information consist of mixed data types, where for each account the
+following are required.
+  account number (int)
+  account type   (short)
+  name           (30 char array)
+  street address (100 char array)
+  city/state/zip (30 char array)
+  balance        (long)
+  last payment   (long)
+  date           (short)
+
+Each account will have one structure defined as follows:
+struct account
+{
+   int acct_no;
+   short acct_type;
+   char name[30];
+   char street[30];
+   char city_state[30];
+   long balance;
+   long last_payment;
+};
+
+
+Referencing structure members
+
+dot operator is a member of highest precedence group ,and it’s associativity if from left to right.
+dot operators takes the precedence over the unary operators as well as the various arithmetic relational ,logical and assignments operators.
+
+
+Expression Interpretation
+++customer.balance
+customer.balance—
+&customer
+&customer.acct_no increment the value of customer.balance.
+increment the value of customer.balance after accessing its value
+accessing the beginning address of customer.
+accessing the beginning address of customer.acct_no.

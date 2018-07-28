@@ -1,1 +1,123 @@
-README for Algorithms
+Bubble Sort
+===========
+
+Bubble sort, also known as sinking sort, is a simple sorting algorithm that works by 
+repeatedly stepping through the list to be sorted, comparing each pair of adjacent 
+items and swapping them if they are in the wrong order. The pass through the list is 
+repeated until no swaps are needed, which indicates that the list is sorted. 
+
+The algorithm gets its name from the way smaller elements "bubble" to the top of the list. 
+Because it only uses comparisons to operate on elements, it is a comparison sort. 
+
+    * It requires n-1 passes to sort an array.
+
+    * In each pass every element a[i] is compared with a[i+1], for i=0 to (n-k-1), 
+      where k is the pass number and if they are out of order i.e. if a[i]>a[i+1], 
+	  they are swapped.
+
+    * This will cause the largest element to move up or bubble up.
+
+    * Thus after the end of the first pass the largest element in the array will be 
+	  placed in the last or nth position and on the next pass, the next largest element 
+	  will be placed at position (n-1). 
+
+    * This continues for each successive pass until the last or (n-1)th pass when the 
+	  second smallest element will be placed at the second position.
+
+The equally simple insertion sort has better performance than bubble sort.
+
+Algorithm
+---------
+
+Bubblesort(a,n)
+
+Begin
+    for k=1 to (n-1) by 1 do
+        for j=0 to (n-k-1) by 1 do
+            if(a[j]>a[j+1]) then
+                set temp=[j]
+                set a[j]=a[j+1]
+                set a[j]=temp
+            endif
+        endfor
+    endfor
+end
+
+We can optimize this by adding one more variable swapped to set true or false, so that if 
+there is no swap in the pass then the array is sorted
+
+Variations
+----------
+
+Odd-even sort is a parallel version of bubble sort, for message passing systems.
+Cocktail sort is another parallel version of the bubble sort
+
+/*********************************************************************************************
+Insertion Sort
+==============
+
+This algorithm is very popular with bridge players when they sort their cards. In this procedure, 
+we pick up a particular value and then insert it at the appropriate place in the sorted sub list.
+
+Insertion sort is a simple sorting algorithm: a comparison sort in which the sorted array (or list) 
+is built one entry at a time. It is much less efficient on large lists than more advanced algorithms 
+such as quicksort, heapsort, or merge sort. 
+
+This algorithm requires n-1 passes.
+
+Pass1: a[1] is inserted either before or after a[0] so that a[0] and a[1] are sorted.
+Pass2: a[2] is inserted either before a[0] or between a[0] and a[1] or after a[1] so 
+       that the elements a[0], a[1], a[2] are sorted.
+Pass3: a[3] is inserted either before a[0] or between a[0] and a[1] or between a[1] and a[2] 
+       or after a[2] so that the elements a[0], a[1], a[2], a[3] are sorted.
+Passk: a[k] is inserted in its proper place in the sorted sub array a[0], a[1], a[2],…a[k-1] 
+       so that the elements a[0], a[1], a[2],…a[k-1],a[k] are sorted.
+
+Passn-1:a[n-1] is inserted in its proper place in the sorted sub array a[0], a[1], a[2],…a[n-2] 
+       so that the elements a[0], a[1], a[2],…a[n-1] are sorted.
+
+Algorithm
+---------
+
+begin
+
+for k=1 to (n-1) by 1 do
+
+	set temp=a[k]
+	j = k-1;
+
+	while((temp<a[j]) and j>=0) do
+		set a[j+1]=a[j]
+		set j=j-1
+	endwhile
+
+	set a[j+1]=temp
+
+endfor
+
+end
+
+Analysis of Insertion Sort
+--------------------------
+
+The worst-case performance occurs when the elements of the input array are in descending order.
+
+In the worst-case, the first pass will require one comparison, the second pass will require 2 
+comparisons, and so on until the last pass which will require (n-1) comparisons. In general, 
+the kth pass will require k-1 comparisons.
+
+Therefore the total number of comparisons is:
+F(n)=1+2+3+…..+(n-k)+….+(n-3)+(n-2)+(n-1)
+=n(n-1)/2
+=O(n2)
+
+Variation
+---------
+
+Shell sort is a sorting algorithm, devised by Donald Shell in 1959, that is a generalization of 
+insertion sort, which exploits the fact that insertion sort works efficiently on input that is 
+already almost sorted. It improves on insertion sort by allowing the comparison and exchange of 
+elements that are far apart. The last step of Shell sort is a plain insertion sort, but by then, 
+the array of data is guaranteed to be almost sorted.
+
+**********************************************************************************************/

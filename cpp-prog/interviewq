@@ -1,0 +1,45 @@
+Q: Is it possible to have Virtual Constructor? If yes, how? If not, Why not
+possible?
+A: There is nothing like Virtual Constructor. The Constructor can’t be virtual
+as the constructor
+is a code which is responsible for creating an instance of a class and it can’t
+be delegated to
+any other object by virtual keyword means.
+Q: What is constructor or ctor?
+A: Constructor creates an object and initializes it. It also creates vtable for
+virtual functions. It is
+different from other methods in a class.
+Q: What about Virtual Destructor?
+A: Yes there is a Virtual Destructor. A destructor can be virtual as it is
+possible as at runtime
+depending on the type of object caller is calling to, proper destructor will be
+called.
+Q: What is the difference between a copy constructor and an overloaded
+assignment operator?
+A: A copy constructor constructs a new object by using the content of the
+argument object. An
+overloaded assignment operator assigns the contents of an existing object to
+another existing
+object of the same class.
+Q: Can a constructor throws an exception? How to handle the error when the
+constructor fails?
+A:The constructor never throws an error.
+Q: What is default constructor?
+A: Constructor with no arguments or all the arguments has default values.
+Q: What is copy constructor?
+A: Constructor which initializes the it's object member variables ( by
+shallow copying) with another object of the same class. If you don't implement
+one in your class
+then compiler implements one for you. for example:
+(a) Boo Obj1(10); // calling Boo constructor
+(b) Boo Obj2(Obj1); // calling boo copy constructor
+(c) Boo Obj2 = Obj1;// calling boo copy constructor
+Q: When are copy constructors called?
+A: Copy constructors are called in following cases:
+(a) when a function returns an object of that
+class by value
+(b) when the object of that class is passed by
+value as an argument to a function
+(c) when you construct an object based on another
+object of the same class
+(d) When compiler generates a temporary object
