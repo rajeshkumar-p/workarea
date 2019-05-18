@@ -1,8 +1,20 @@
 /* 
 Endianess : 
  Little Endian and Big Endian are two ways of storing multibyte data
+
  Little Endian : In a multibyte data, last byte of data stored first
  Big Endian    : In a multibyte data, first byte stored first 
+
+ Big Endian Byte Order: Most significant byte of the data is placed at the
+byte with the lowest address. The rest of the data is placed in order in the
+next three bytes in memory.
+
+ Little Endian Byte Order: Least significant byte of the data is placed at
+the byte with the lowest address. The rest of the data is placed in order in the
+next three bytes in memory.
+
+ In Big Endian bytes are stored in a word from left to right but in Little 
+Endian bytes are stored in reverse order.
 
 https://www.geeksforgeeks.org/little-and-big-endian-mystery/
 */
