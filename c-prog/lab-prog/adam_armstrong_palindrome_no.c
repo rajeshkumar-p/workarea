@@ -1,3 +1,13 @@
+/*
+Program to demonstrate while loop usage in C
+- find no of digits in a no
+- find sum of digits in a no
+- reverse a no
+- find adam no
+- find armstrong no
+- find palindrome no 
+*/
+
 #include <stdio.h>
 #include <math.h>
 
@@ -127,4 +137,3 @@ int main()
    printf("\n\n");	
    return 0;
 }	
-

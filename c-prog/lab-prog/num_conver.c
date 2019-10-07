@@ -1,3 +1,9 @@
+/*
+Program to demontrate while loop usage
+- binary to decimal
+- decimal to binary
+*/
+
 #include <stdio.h>
 
 int binary_to_decimal(int num)
