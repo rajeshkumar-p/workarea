@@ -2,6 +2,31 @@
 
 # https://www.tutorialspoint.com/python/python_functions.htm
 
+# function without arguments
+def welcome_banner1():
+    print "Welcome to CSC !! "
+
+# function with arguments
+def welcome_banner2(name):
+    print "Welcome ", name, " !! "
+
+# fucntion with default arguments
+# A default argument is an argument that assumes a default value if a value is
+# not provided in the function call for that argument. 
+def welcome_banner3(str = "Buddy"):
+    print "Welcome ", str," !!"
+
+# function that returns a value
+def cube(x):
+    return x*x*x
+
+# function with variable number of arguments
+def total(*var):
+   sum = 0;
+   for no in var:
+      sum = sum + no;
+   print "total is : ", sum 
+
 # All parameters (arguments) in the Python language are passed by reference. It
 # Function definition is here
 # means if you change what a parameter refers to within a function, the change
@@ -43,22 +68,6 @@ def student_details(name, no, mark1, mark2, mark3):
     print "Mark 3 : ", mark3
     print "Total  : ", mark1+mark2+mark3
  
-# default arguments
-# A default argument is an argument that assumes a default value if a value is
-# not provided in the function call for that argument. 
-
-def welcome_banner(str = "Buddy"):
-
-    print "Welcome ", str," !!"
-
-# variable length arguments
-def total(*var):
-  
-   sum = 0;
-   for no in var:
-      sum = sum + no;
-   print "total is : ", sum 
-
 # anonymous funtions - lambda
 # These functions are called anonymous because they are not declared in the
 # standard manner by using the def keyword. You can use the lambda keyword to
@@ -83,8 +92,14 @@ print "Hello World"
 odd_or_even(10)
 odd_or_even(11)
 
-welcome_banner("Rajesh")
-welcome_banner()
+welcome_banner1()
+
+welcome_banner2("Ganesh")
+
+welcome_banner3()
+welcome_banner3("Rajesh")
+
+print " \n Cube of 10 is ", cube(10)
 
 total()
 total(10,20)
